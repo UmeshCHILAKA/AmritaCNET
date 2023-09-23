@@ -30,24 +30,58 @@ namespace Question2
             Console.WriteLine($"Stack is not affected when peeked.");
 
             // Stack empty
-            Console.WriteLine($"Is stack Empty? : {intStack.Count==0}\r\n");
-
+            Console.WriteLine($"Is stack Empty? : {intStack.Count == 0}\r\n");
 
             //Ascending sort of Stack
             Console.WriteLine($"Ascendingly Sorted stack");
-            SortStack(intStack, true);
-            PrintStack(intStack);
+            var ascendingStack = SortStack(intStack, true);
+            PrintStack(ascendingStack);
+            Console.WriteLine();// Empty line for better view in output
 
-
-            //Ascending sort of Stack
+            //Descending sort of Stack
             Console.WriteLine($"Descendingly Sorted stack");
-            SortStack(intStack, false);
-            PrintStack(intStack);
+            var descendingStack = SortStack(ascendingStack, false);
+            PrintStack(descendingStack);
+            Console.WriteLine();// Empty line for better view in output
+
+
+
+
             Console.ReadLine();
         }
 
-        private static void SortStack(Stack<int> intStack, bool isAscending)
+        /// <summary>
+        /// Sorts the stack.
+        /// </summary>
+        /// <param name="intStack">The int stack.</param>
+        /// <param name="isAscending">if set to <c>true</c> [is ascending].</param>
+        /// <returns>sorted stack</returns>
+        private static Stack<int> SortStack(Stack<int> intStack, bool isAscending)
         {
+            Stack<int> tempStack = new Stack<int>();
+
+            while (intStack.Count > 0)
+            {
+                var tempitem = intStack.Pop();
+
+                if (isAscending)
+                {
+                    while (tempStack.Count > 0 && tempStack.Peek() < tempitem)
+                    {
+                        intStack.Push(tempStack.Pop());
+                    }
+                }
+                else
+                {
+                    while (tempStack.Count > 0 && tempStack.Peek() > tempitem)
+                    {
+                        intStack.Push(tempStack.Pop());
+                    }
+                }
+
+                tempStack.Push(tempitem);
+            }
+            return tempStack;
         }
 
         /// <summary>
