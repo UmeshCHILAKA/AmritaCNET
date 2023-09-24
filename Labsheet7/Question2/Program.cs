@@ -32,6 +32,12 @@ namespace Question2
             // Stack empty
             Console.WriteLine($"Is stack Empty? : {intStack.Count == 0}\r\n");
 
+            //Reverse stack
+            Console.WriteLine($"Reversing the stack");
+            var reversedStack=ReverseStack(intStack);
+            PrintStack(reversedStack);
+            Console.WriteLine();// Empty line for better view in output
+
             //Ascending sort of Stack
             Console.WriteLine($"Ascendingly Sorted stack");
             var ascendingStack = SortStack(intStack, true);
@@ -48,6 +54,21 @@ namespace Question2
 
 
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Reverses the stack.
+        /// </summary>
+        /// <param name="intStack">The int stack.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        private static Stack<int> ReverseStack(Stack<int> intStack)
+        {
+            Stack<int> tempStack = new Stack<int>();
+            foreach (var item in intStack)
+            {
+                tempStack.Push(item);
+            }
+            return tempStack;
         }
 
         /// <summary>

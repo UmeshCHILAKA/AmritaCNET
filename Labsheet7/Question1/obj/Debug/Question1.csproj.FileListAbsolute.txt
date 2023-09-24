@@ -1,0 +1,7 @@
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\bin\Debug\Question1.exe.config
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\bin\Debug\Question1.exe
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\bin\Debug\Question1.pdb
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\obj\Debug\Question1.csproj.AssemblyReference.cache
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\obj\Debug\Question1.csproj.CoreCompileInputs.cache
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\obj\Debug\Question1.exe
+D:\Amrita\Sem-5\C#\Assignments\Labsheet7\obj\Debug\Question1.pdb
