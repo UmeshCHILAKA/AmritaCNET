@@ -10,16 +10,24 @@ namespace Question1
     {
         static void Main(string[] args)
         {
-            Circle circle = new Circle( 7 );
+            Circle circle = new Circle(7);
             Console.WriteLine($"Area of the circle with radius {circle.Radius} is {circle.getArea()}");
             Console.WriteLine($"Perimeter of the circle with radius {circle.Radius} is {circle.getPerimeter()}");
+
+            Console.WriteLine();
 
             Rectangle rectangle = new Rectangle(2, 3);
             Console.WriteLine($"Area of the rectangle with Length {rectangle.Length} and width {rectangle.Width} is {rectangle.getArea()}");
             Console.WriteLine($"Perimeter of the rectangle with Length {rectangle.Length} and width {rectangle.Width} is {rectangle.getPerimeter()}");
+
+            Console.ReadLine();
         }
     }
 
+    /// <summary>
+    /// Represents Circle class
+    /// </summary>
+    /// <seealso cref="Question1.IGeometricObject" />
     internal class Circle : IGeometricObject
     {
         /// <summary>
@@ -52,6 +60,11 @@ namespace Question1
             return 2 * Math.PI * Radius * Radius;
         }
     }
+
+    /// <summary>
+    /// Represents Rectangle class
+    /// </summary>
+    /// <seealso cref="Question1.IGeometricObject" />
     internal class Rectangle : IGeometricObject
     {
         /// <summary>
