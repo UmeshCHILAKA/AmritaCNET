@@ -1,7 +1,0 @@
-D:\Amrita\Sem-5\C#\Assignments\Question2\bin\Debug\Question2.exe.config
-D:\Amrita\Sem-5\C#\Assignments\Question2\bin\Debug\Question2.exe
-D:\Amrita\Sem-5\C#\Assignments\Question2\bin\Debug\Question2.pdb
-D:\Amrita\Sem-5\C#\Assignments\Question2\obj\Debug\Question2.csproj.AssemblyReference.cache
-D:\Amrita\Sem-5\C#\Assignments\Question2\obj\Debug\Question2.csproj.CoreCompileInputs.cache
-D:\Amrita\Sem-5\C#\Assignments\Question2\obj\Debug\Question2.exe
-D:\Amrita\Sem-5\C#\Assignments\Question2\obj\Debug\Question2.pdb
