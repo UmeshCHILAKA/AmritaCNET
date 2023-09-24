@@ -28,13 +28,14 @@ namespace Question2
             Console.WriteLine($"Current top element is {intStack.Peek()}");
             PrintStack(intStack);
             Console.WriteLine($"Stack is not affected when peeked.");
+            Console.WriteLine();// Empty line for better view in output
 
             // Stack empty
             Console.WriteLine($"Is stack Empty? : {intStack.Count == 0}\r\n");
 
             //Reverse stack
             Console.WriteLine($"Reversing the stack");
-            var reversedStack=ReverseStack(intStack);
+            var reversedStack = ReverseStack(intStack);
             PrintStack(reversedStack);
             Console.WriteLine();// Empty line for better view in output
 
@@ -49,11 +50,96 @@ namespace Question2
             var descendingStack = SortStack(ascendingStack, false);
             PrintStack(descendingStack);
             Console.WriteLine();// Empty line for better view in output
+            Console.WriteLine();// Empty line for better view in output
 
 
+            Console.WriteLine($"Reinitializing stack");
 
+            intStack.Push(18);
+            intStack.Push(9);
+            intStack.Push(18);
+            intStack.Push(36);
+            intStack.Push(18);
+            intStack.Push(27);
+
+            PrintStack(intStack);
+
+            Console.WriteLine($"Removing first element 18 from stack");
+            var reducedStack = RemoveEntry(intStack, 18, false);
+            PrintStack(reducedStack);
+            Console.WriteLine();// Empty line for better view in output
+
+
+            Console.WriteLine($"Removing all elements 18 from stack");
+            reducedStack = RemoveEntry(intStack, 18, true);
+            PrintStack(reducedStack);
+            Console.WriteLine();// Empty line for better view in output
+
+            Console.WriteLine($"Is 18 avaliable in stack? {reducedStack.Contains(18)}!");
+            Console.WriteLine($"Is 27 avaliable in stack? {reducedStack.Contains(27)}!");
+            Console.WriteLine();// Empty line for better view in output
+
+
+            Stack<int> intStack2 = new Stack<int>();
+            intStack2.Push(-1);
+            intStack2.Push(-2);
+            intStack2.Push(-3);
+            intStack2.Push(-4);
+
+            PrintStack(intStack);
+            PrintStack(intStack2);
+
+            Console.WriteLine($"Merging both stacks");
+            var mergedStack = MergeStacks(intStack, intStack2);
+            PrintStack(mergedStack);
 
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Merges the stacks.
+        /// </summary>
+        /// <param name="intStack1">The int stack1.</param>
+        /// <param name="intStack2">The int stack2.</param>
+        /// <returns>merged stack</returns>
+        private static Stack<int> MergeStacks(Stack<int> intStack1, Stack<int> intStack2)
+        {
+            var mergedStack = new Stack<int>();
+            foreach (var item in intStack2.Reverse())
+            {
+                mergedStack.Push(item);
+            }
+            foreach (var item in intStack1.Reverse())
+            {
+                mergedStack.Push(item);
+            }
+            return mergedStack;
+        }
+
+        /// <summary>
+        /// Removes the entry from stack.
+        /// </summary>
+        /// <param name="intStack">The int stack.</param>
+        /// <param name="entryToRemove">The entry to remove.</param>
+        /// <param name="allEntries">if set to <c>true</c> all matching entries are removed.</param>
+        /// <returns>Stack with entries removed</returns>
+        private static Stack<int> RemoveEntry(Stack<int> intStack, int entryToRemove, bool allEntries)
+        {
+            Stack<int> tempStack = new Stack<int>();
+            bool stopChecking = false;
+            foreach (var item in intStack)
+            {
+                if (item == entryToRemove && !stopChecking)
+                {
+                    if (!allEntries) // break if only first entry has to be removed
+                        stopChecking = true;
+                }
+                else
+                {
+                    tempStack.Push(item);
+                }
+            }
+            return ReverseStack(tempStack);
         }
 
         /// <summary>
