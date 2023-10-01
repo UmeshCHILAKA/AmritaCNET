@@ -9,7 +9,7 @@ namespace Q2
     internal class Rectangle : Shape
     {
         protected double width;
-        protected double height;
+        protected double length;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Rectangle"/> class.
@@ -24,7 +24,7 @@ namespace Q2
         public Rectangle(double width, double height) : base()
         {
             this.width = width;
-            this.height = height;
+            this.length = height;
         }
 
         /// <summary>
@@ -37,7 +37,38 @@ namespace Q2
         public Rectangle(double width, double height, string color, bool filled) : base(color, filled)
         {
             this.width = width;
-            this.height = height;
+            this.length = height;
+        }
+
+        /// <summary>
+        /// Sets the length.
+        /// </summary>
+        public void setLength(double l)
+        {
+            this.length = l;
+        }
+
+        /// <summary>
+        /// Sets the width.
+        /// </summary>
+        public void setWidth(double w)
+        {
+            this.width = w;
+        }
+
+        /// <summary>
+        /// Gets the width.
+        /// </summary>
+        public double getWidth()
+        {
+            return this.width;
+        }
+        /// <summary>
+        /// Gets the length.
+        /// </summary>
+        public double getLength()
+        {
+            return this.length;
         }
 
         /// <summary>
@@ -45,7 +76,7 @@ namespace Q2
         /// </summary>
         public override double getArea()
         {
-            return width * height;
+            return width * length;
         }
 
         /// <summary>
@@ -53,7 +84,7 @@ namespace Q2
         /// </summary>
         public override double getPerimeter()
         {
-            return 2*(height + width);
+            return 2 * (length + width);
         }
 
         /// <summary>
@@ -61,7 +92,7 @@ namespace Q2
         /// </summary>
         public override string ToString()
         {
-            return $"Rectangle [{base.ToString()}, width = {width}, height = {height}]";
+            return $"Rectangle [{base.ToString()}, width = {width}, height = {length}]";
         }
     }
 }

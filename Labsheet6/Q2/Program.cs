@@ -53,6 +53,32 @@ namespace Q2
             Console.WriteLine($"Rectangle instance with with width of 4 and lenght of 6, with color Yellow and filled");
             Console.WriteLine($"Rectangle details = {shape},\r\narea = {shape.getArea()} and perimeter = {shape.getPerimeter()}");
             Console.WriteLine();
+
+
+
+            Console.WriteLine("----------------------Square----------------------");
+
+            shape = new Square();
+
+            Console.WriteLine($"Default instance of Square");
+            Console.WriteLine($"Square details = {shape},\r\narea = {shape.getArea()} and perimeter = {shape.getPerimeter()}");
+            Console.WriteLine();
+
+            shape = new Square(2);
+            Console.WriteLine($"Square instance with side of 2");
+            Console.WriteLine($"Square details = {shape},\r\narea = {shape.getArea()} and perimeter = {shape.getPerimeter()}");
+            Console.WriteLine();
+
+            shape = new Square( 5, "green", false);
+            Console.WriteLine($"Square instance with with side of 5, with color green and not filled");
+            Console.WriteLine($"Square details = {shape},\r\narea = {shape.getArea()} and perimeter = {shape.getPerimeter()}");
+            Console.WriteLine();
+
+            shape = new Square(4, "Yellow", true);
+            Console.WriteLine($"Square instance with with side of 4, with color Yellow and filled");
+            Console.WriteLine($"Square details = {shape},\r\narea = {shape.getArea()} and perimeter = {shape.getPerimeter()}");
+            Console.WriteLine();
+
             Console.ReadLine();
         }
     }
