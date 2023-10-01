@@ -51,6 +51,7 @@ namespace Q4
         {
             this.x = x;
         }
+
         /// <summary>
         /// Gets the y.
         /// </summary>
