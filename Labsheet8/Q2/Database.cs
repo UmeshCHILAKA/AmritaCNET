@@ -19,7 +19,7 @@ namespace Q2
 
         public void AddData(AddressDetails details)
         {
-            string sqlQuery = $"Insert into addressbook values({details.Name}, )";
+            string sqlQuery = $"Insert into addressbook values({details.Name},{details.HouseName},{details.MobileNum},{details.HouseNumber}, {details.Locality}, {details.City}, {details.Postoffice})";
             SqlCommand cmd = new SqlCommand(sqlQuery, _connection);
             cmd.ExecuteNonQuery();
 
