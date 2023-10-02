@@ -17,7 +17,7 @@ namespace Q2
         public Form1()
         {
             InitializeComponent();
-            db= new Database("Data Source=localhost;Initial Catalog=AddressBook;Integrated Security=True");
+            db = new Database("Data Source=localhost\sqlexpress;Initial Catalog=AddressBook;Integrated Security=True");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,16 +30,17 @@ namespace Q2
             db.DeleteData(details);
         }
 
-        private void  UpdateAddressObj()
+        private void UpdateAddressObj()
         {
-            details = new AddressDetails {
-            Name=txtName.Text,
-            HouseName=txtHouseName.Text,
-            City=txtCity.Text,
-             HouseNumber=txtHnum.Text,
-            Locality=txtLocality.Text,
-             MobileNum=txtMNum.Text,
-            Postoffice=txtPO.Text,
+            details = new AddressDetails
+            {
+                Name = txtName.Text,
+                HouseName = txtHouseName.Text,
+                City = txtCity.Text,
+                HouseNumber = txtHnum.Text,
+                Locality = txtLocality.Text,
+                MobileNum = txtMNum.Text,
+                Postoffice = txtPO.Text,
             };
 
         }
@@ -52,6 +53,13 @@ namespace Q2
         private void btnEdit_Click(object sender, EventArgs e)
         {
             db.EditData(details);
+            txtName.Text = string.Empty;
+            txtHouseName.Text = string.Empty;
+            txtCity.Text = string.Empty;
+            txtHnum.Text = string.Empty;
+            txtLocality.Text = string.Empty;
+            txtMNum.Text = string.Empty;
+            txtPO.Text = string.Empty;
         }
     }
 }
